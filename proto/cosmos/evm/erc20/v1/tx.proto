@@ -44,7 +44,6 @@ service Msg {
 // coin.
 message MsgConvertERC20 {
   option (amino.name) = "cosmos/evm/MsgConvertERC20";
-  option (cosmos.msg.v1.signer) = "sender";
   // contract_address of an ERC20 token contract, that is registered in a token
   // pair
   string contract_address = 1;
