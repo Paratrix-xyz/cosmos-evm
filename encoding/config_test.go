@@ -12,6 +12,11 @@ import (
 	evmtypes "github.com/cosmos/evm/x/vm/types"
 )
 
+func TestSigningContextValidation(t *testing.T) {
+	cfg := encoding.MakeConfig(1)
+	require.NoError(t, cfg.InterfaceRegistry.SigningContext().Validate())
+}
+
 func TestTxEncoding(t *testing.T) {
 	addr, key := utiltx.NewAddrKey()
 	signer := utiltx.NewSigner(key)
